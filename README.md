@@ -38,40 +38,7 @@ A simple way to get started is simply to try out and follow the example code in 
     cmake --build ./build/
     ````
     ````
-    ./build/read_rpy
+    ./build/read_imu
     ````
 
-- You can follow the pattern used in the example `read_rpy.cpp` in your own code and use the cpp library as fit.
-
-
-## Basic Library functions and usage
-
-- connect to sic_driver shield module
-  > .connect("port_name or port_path")
-
-- get filtered Roll, Ptich and Yaw
-  > getRPY(&roll, &pitch, &yaw)
-
-- get quaternions
-  > getQuat(&qw, &qx, &qy, &qz)
-
-- get Roll(gx), Pitch(gy) and Yaw(gz) rates value
-  > getGyro(&gx, &gy, &gz)
-
-- get linear acceleration values ax, ay, az
-  > getAcc(&ax, &ay, &az)
-
-- get rpy variances
-  > getRPYvariance(&r_var, &p_var, &y_var)
-
-- get rpy rate variances
-  > getGyroVariance(&gx_var, &gy_var, &gz_var)
-
-- get acceleration variances
-  > getAccVariance(&ax_var, &ay_, &az_var)
-
-- get gain
-  > getAccVariance(&gain)
-
-- get ref frame
-  > getRefFrame(&ref_frame)
+- You can follow the pattern used in the example `read_imu.cpp` in your own code and use the cpp library as fit.
