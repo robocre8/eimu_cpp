@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     std::cout << "configuring controller: " << i << " sec" << std::endl;
   }
 
-  success = eimu.clearDataBuffer();
+  // success = eimu.clearDataBuffer();
 
   int worldFrameId = 1;
   eimu.setWorldFrameId(worldFrameId);
