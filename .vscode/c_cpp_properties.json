@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/samuko-things/ros_ws/install/epmc_hardware_interface/include/**",
+        "/home/samuko-things/ros_ws/install/eimu_ros/include/**",
+        "/home/samuko-things/ros_ws/install/aa_mecanum_drive_controller/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/home/samuko-things/Documents/my_codes/eimu_cpp/include/**",
+        "include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

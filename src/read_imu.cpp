@@ -23,10 +23,12 @@ int main(int argc, char **argv)
 
   auto prevTime = std::chrono::system_clock::now();
   std::chrono::duration<double> duration;
-  float sampleTime = 0.01;
+  float sampleTime = 0.02;
 
-  std::string port = "/dev/ttyACM0";
-  eimu.connect(port);
+  std::string serial_port = "/dev/ttyACM0";
+  int serial_baud_rate = 115200;
+  int serial_timeout_ms = 18;
+  eimu.connect(serial_port, serial_baud_rate, serial_timeout_ms);
 
   // wait for the eimu to fully setup
   for (int i = 1; i <= 4; i += 1)
@@ -55,7 +57,7 @@ int main(int argc, char **argv)
     duration = (std::chrono::system_clock::now() - prevTime);
     if (duration.count() > sampleTime)
     {
-      std::tie(success, r, p, y, ax, ay, az, gz, gy, gz) = eimu.readImuData();
+      std::tie(success, r, p, y, ax, ay, az, gx, gy, gz) = eimu.readImuData();
 
       if (success){
         std::cout << "r: " << r << std::fixed << std::setprecision(4);
