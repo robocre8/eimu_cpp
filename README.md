@@ -5,34 +5,20 @@ C++ serial interface for the Easy IMU (EIMU).
 
 #
 
-## install dependecies
-- install the libserial-dev and pkg-config package
-  > sudo apt-get update
-  >
-  > sudo apt install libserial-dev pkg-config
-
-#
-
 ## Install
-- in your home dir or any prefered directory
+- download the latest eimu-serial-dev `.deb` file form the [release](https://github.com/robocre8/eimu_serial_cpp/releases)
+
+- install the eimu-serial-dev `.deb` file
   ```shell
-    git clone https://github.com/robocre8/eimu_serial_cpp.git
-
-    cd eimu_serial_cpp
-
-    cmake -B build -DCMAKE_INSTALL_PREFIX=/opt/eimu_serial
-
-    cmake --build build
-
-    sudo cmake --install build
+    sudo apt install ../eimu-serial-dev_<version>_amd64.deb
   ```
 
 #
 
 ## Uninstall
-- run this in your terminal anytime you want to uninstall the epmc_serial cpp package
+- uninstall the .deb file any time with this
   ```shell
-    sudo rm -rf /opt/eimu_serial
+    sudo apt remove eimu-serial-dev
   ```
 
 #
@@ -201,14 +187,10 @@ int main(int argc, char **argv)
   cmake_minimum_required(VERSION 3.16)
   project(read_imu LANGUAGES CXX)
 
+  find_package(eimu_serial REQUIRED)
 
-  find_package(eimu_serial REQUIRED
-      PATHS /opt/eimu_serial/lib/cmake/eimu_serial
-  )
-
-  # include_directories(include)
-  add_executable( read_imu src/read_imu.cpp )
-  target_link_libraries(read_imu PRIVATE eimu_serial::eimu_serial)
+  add_executable(read_imu src/read_imu.cpp)
+  target_link_libraries(read_imu eimu_serial::eimu_serial)
 
 ```
 

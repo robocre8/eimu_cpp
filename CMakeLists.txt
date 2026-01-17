@@ -31,18 +31,22 @@ target_link_libraries(eimu_serial INTERFACE
     ${LIBSERIAL_LIBRARIES}
 )
 
+target_compile_options(eimu_serial INTERFACE
+    ${LIBSERIAL_CFLAGS_OTHER}
+)
+
 # Namespaced alias
 add_library(eimu_serial::eimu_serial ALIAS eimu_serial)
 
 # --------------------------------------------------
 # Examples
 # --------------------------------------------------
-option(EIMU_SERIAL_BUILD_EXAMPLES "Build EIMU Serial examples" OFF)
+# option(EIMU_SERIAL_BUILD_EXAMPLES "Build EIMU Serial examples" OFF)
 
-if(EIMU_SERIAL_BUILD_EXAMPLES)
-    add_executable(motor_control examples/motor_control.cpp)
-    target_link_libraries(motor_control PRIVATE eimu_serial::eimu_serial)
-endif()
+# if(EIMU_SERIAL_BUILD_EXAMPLES)
+#     add_executable(read_imu examples/read_imu.cpp)
+#     target_link_libraries(read_imu PRIVATE eimu_serial::eimu_serial)
+# endif()
 
 # --------------------------------------------------
 # Install
@@ -58,6 +62,7 @@ install(
 install(
     TARGETS eimu_serial
     EXPORT eimu_serialTargets
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 install(
