@@ -6,12 +6,16 @@ C++ serial interface for the Easy IMU (EIMU).
 #
 
 ## Install
-- download the latest eimu-serial-dev `.deb` file form the [release](https://github.com/robocre8/eimu_serial_cpp/releases)
+- download and install the eimu-serial-dev pkg. you can also check the latest release [here](https://github.com/robocre8/eimu_serial_cpp/releases/)
 
-- install the eimu-serial-dev `.deb` file
-  ```shell
-    sudo apt install ./eimu-serial-dev_<version>_arm64.deb
-  ```
+**Raspberry Pi, etc. (ARM64)**
+```shell
+wget https://github.com/robocre8/eimu_serial_cpp/releases/download/v1.1.1/eimu-serial-dev_1.1.1_arm64.deb
+```
+```shell
+sudo apt install ./eimu-serial-dev_1.1.1_arm64.deb
+```
+
 
 #
 
